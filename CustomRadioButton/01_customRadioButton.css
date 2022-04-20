@@ -1,0 +1,84 @@
+*, *::before{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input{
+    position: relative;
+    width: 150px;
+    height: 50px;
+    margin: 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input input{
+    appearance: none;
+    position: relative;
+    width: 16px;
+    height: 16ox;
+    background: rgb(150, 176, 178);
+    border-radius: 50%;
+    outline: none;
+    transition: 0.35s;
+}
+
+.input input::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgb(0, 230, 161);
+    border-radius: 50%;
+    transition: 0.35s;
+}
+
+.input label{
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    font-family: sans-serif;
+}
+
+.input label::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 50px;
+    border: 2px solid rgb(173, 227, 244);
+    border-radius: 8px;
+    z-index: -1;
+    transition: 0.35s;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+input:checked{
+    background: rgb(166, 188, 195);
+}
+
+input:checked::before{
+    border-color: rgb(4, 255, 192);
+    background: linear-gradient(57deg,rgb(0, 255, 187),rgb(0, 128, 255));
+}
+
+input:checked ~ label::before{
+    opacity: 1;
+    transform: scale(1.1);
+}
